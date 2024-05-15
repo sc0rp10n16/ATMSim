@@ -4,7 +4,9 @@ import java.util.*;
 
 public class ATMOperations implements ATMOperationInterface{
     ATM atm = new ATM();
-    Map<String,String> miniStatement = new HashMap<>();
+    Map<String,String> miniStatement = new HashMap<>(); // Hashmap to store transactions history
+
+    //Deposit method
     @Override
     public void depositAmount(String deposit) {
         int creditAmount=0;
@@ -51,6 +53,7 @@ public class ATMOperations implements ATMOperationInterface{
 
     }
 
+    // Withdraw method
     @Override
     public void withdrawAmount(Integer amount) {
         int debitAmount = 0;
@@ -98,6 +101,7 @@ public class ATMOperations implements ATMOperationInterface{
 
     }
 
+    //Balance method
     @Override
     public void viewBalance() {
         System.out.println("Available balance: "+atm.getBalance()+".0");
@@ -105,6 +109,8 @@ public class ATMOperations implements ATMOperationInterface{
 //        return balance;
     }
 
+
+    //Mini statement method
     @Override
     public void viewMiniStatement() {
         System.out.println("---------------------------------------------------");
